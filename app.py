@@ -20,18 +20,15 @@ def home(app_id,seq):
 @app.route('/<app_id>', methods=['GET'])
 def get_tree(app_id):
 	entity = db.activity.find()
-	for i in entity:
-		return jsonify({'app_id': str(i)})
 
-
-	#if not entity:
-	#	return jsonify({'app_id' : 'INVALID app_id',
-	#			'tree' : {}
-		#	})
-	#else:
-	#	cont= con(entity)
-	#	co = deconv(cont)
-	#	return jsonify({'app_id': app_id, 'tree' : co })
+	if not entity:
+		return jsonify({'app_id' : 'INVALID app_id',
+				'tree' : {}
+			})
+	else:
+		cont= deconv((entity))
+		#co = deconv(cont)
+		return jsonify({'app_id': app_id, 'tree' : str(cont) })
 
 
 if __name__ == '__main__':

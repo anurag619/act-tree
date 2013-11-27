@@ -8,14 +8,16 @@ activity = db.activity
 
 def con(dicn):
     """Recursively converts dictionary keys to strings."""
-    if not isinstance(dictionary, dict):
-        return dictn
-    return dictn((str(k), con(v)) 
-        for k, v in dictn.items())
+    if not isinstance(dicn, dict):
+        return dicn
+    return dict((str(k), con(v)) 
+        for k, v in dicn.items())
 
 
 def deconv(di):
-	q= create(str(di.items()[0][1]))
+	dicc = con(di) 
+	qw = (dicc.items()[2][1])
+	q= create(str(qw))
 	return q
 
 def tree(): 
