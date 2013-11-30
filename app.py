@@ -11,7 +11,7 @@ def home(app_id,seq):
 		d["app"]=app_id
 		d["act"]=seq
 		activity.insert(d)
-		return "Didn't do anything with POST, but here's a message."
+		return "post made"
 
 @app.route('/<app_id>', methods=['GET'])
 def get_tree(app_id):
@@ -21,12 +21,11 @@ def get_tree(app_id):
 
 	if not entity:
 		return jsonify({'app_id' : 'INVALID app_id',
-				'tree' : {}
-			})
+				'tree' : {} })
 	else:
 		cont= deconv((str(entity)).encode('utf-8'))
-		#co = deconv(cont)
-		return jsonify({'app_id': app_id, 'tree' : cont })
+		entity['act']= cont
+		return jsonify({'app_id': app_id, 'tree' : entity['act'] })
 
 
 if __name__ == '__main__':
