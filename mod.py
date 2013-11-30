@@ -1,6 +1,8 @@
 from collections import defaultdict
 import pymongo
- 
+import re
+import json
+
 connection = pymongo.Connection()
 db = connection.mydatabase
 activity = db.activity
@@ -15,9 +17,10 @@ def con(dicn):
 
 
 def deconv(di):
-	dicc = con(di) 
-	qw = (dicc.items()[2][1])
-	q= create(str(qw))
+	
+	qw = re.search(r'\b[A-Z]{3}\b',di)
+
+	q= create(qw.group())
 	return q
 
 def tree(): 
@@ -25,9 +28,10 @@ def tree():
 
 def create(er):
 	a= tree()
-	b = nes(a[er[0]][er[1]][er[2]])
+	b = a[er[0]][er[1]][er[2]]
+	gh = nes(a)
 
-	return b
+	return gh
 
 
 def nes(dd):

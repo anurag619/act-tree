@@ -1,11 +1,8 @@
 from flask import Flask, jsonify, request
 
-
 from mod import *
 
-
 app = Flask(__name__)
-
 
 @app.route('/<app_id>/<seq>', methods=['POST'])
 def home(app_id,seq):
@@ -16,19 +13,20 @@ def home(app_id,seq):
 		activity.insert(d)
 		return "Didn't do anything with POST, but here's a message."
 
-
 @app.route('/<app_id>', methods=['GET'])
 def get_tree(app_id):
-	entity = db.activity.find()
+	f= {}
+	f["app"]=app_id
+	entity = db.activity.find_one(f)
 
 	if not entity:
 		return jsonify({'app_id' : 'INVALID app_id',
 				'tree' : {}
 			})
 	else:
-		cont= deconv((entity))
+		cont= deconv((str(entity)).encode('utf-8'))
 		#co = deconv(cont)
-		return jsonify({'app_id': app_id, 'tree' : str(cont) })
+		return jsonify({'app_id': app_id, 'tree' : cont })
 
 
 if __name__ == '__main__':
