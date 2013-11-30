@@ -16,7 +16,7 @@ def home(app_id,seq):
 def get_tree(app_id):
 	f= {}
 	f["app"]=app_id
-	entity = db.activity.find(f)
+	entity = db.activity.find_one(f)
 
 	if not entity:
 		return jsonify({'app_id' : 'INVALID app_id',
