@@ -11,7 +11,8 @@ If a POST request is done on app_id=1 with activity 'ABC', GET request for the s
 example - 
 
 
-requests.get('http://127.0.0.1:5000/2') /n
+requests.get('http://127.0.0.1:5000/2') 
+
 ---> {\n  "app_id": "2", \n  "tree": {\n    "A": {\n      "B": {\n        "C": {}\n      }\n    }\n  }\n}
 
 
