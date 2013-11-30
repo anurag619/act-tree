@@ -6,7 +6,6 @@ connection = pymongo.Connection()
 db = connection.mydatabase
 activity = db.activity
 
-
 def conv(entity):
 	cont= deconv((str(entity)).encode('utf-8'))
 	entity['act']= cont
@@ -25,7 +24,6 @@ def create(er):
 	a[er[0]][er[1]][er[2]]
 	gh = nes(a)
 	return gh
-
 
 def nes(dd):
     """converts nested dictionaries to standard dicts """
