@@ -8,11 +8,11 @@ A simple api using python framework(flask) that receives POST requests containin
 specification
 --------------
 
-If a POST request is done on id=1 with activity 'ABC', GET request for the same will yield a json object that represents a tree ( A->B->C )of that perticular activty.
+* If a POST request is done on id=1 with activity 'ABC', GET request for the same will yield a json object that represents a tree ( A->B->C )of that perticular activty.
 
-For representing the tree, nested dictionaries is used.
+* For representing the tree, nested dictionaries is used.
 
-[Pymongo](http://api.mongodb.org/python/current) <i>,Python interface of Mongodb</i> is used to store the data. 
+* [Pymongo](http://api.mongodb.org/python/current) <i>,Python interface of Mongodb</i> is used to store the data. 
 
 <b>example - </b> 
 
