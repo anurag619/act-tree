@@ -10,8 +10,8 @@ specification
 
 If a POST request is done on id=1 with activity 'ABC', GET request for the same will yield a json oject that represents a tree ( A->B->C )of the perticular activty.
 
-<li>For representing the tree, nested dictionaries is used.
-Pymongo <i>( Python interface of Mongodb)</i> is used to store the data.  </li>
+<ol>For representing the tree, nested dictionaries is used.
+Pymongo <i>( Python interface of Mongodb)</i> is used to store the data.  </ol>
 
 <b>example - </b> 
 
