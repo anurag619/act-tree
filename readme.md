@@ -19,8 +19,9 @@ Pymongo <i>( Python interface of Mongodb)</i> is used to store the data.  </ol>
 	import requests
 
 	requests.post('http://127.0.0.1:5000/2/ABC')
-	requests.get('http://127.0.0.1:5000/2') 
+	r = requests.get('http://127.0.0.1:5000/2') 
+	r.text
 
-{\n  "app_id": "2", \n  "tree": {\n    "A": {\n      "B": {\n        "C": {}\n      }\n    }\n  }\n}
+	{\n  "app_id": "2", \n  "tree": {\n    "A": {\n      "B": {\n        "C": {}\n      }\n    }\n  }\n}
 
 
